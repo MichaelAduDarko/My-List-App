@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         return view
     }()
     
-    let titleLabel = MyListAppLabel(title: "LIST IT DOWN ", size: 24, textAlign: .center)
+    let titleLabel = MyListAppLabel(title: "LIST IT DOWN ", size: 30, textAlign: .center)
     
     
     override func viewDidLoad() {

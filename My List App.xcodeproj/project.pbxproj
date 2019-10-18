@@ -16,6 +16,8 @@
 		4748B77523594154007B3B73 /* MyListAppGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B77423594154007B3B73 /* MyListAppGradient.swift */; };
 		4748B778235944F1007B3B73 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B777235944F1007B3B73 /* extension.swift */; };
 		4748B77B235955DE007B3B73 /* MyListAppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B77A235955DE007B3B73 /* MyListAppLabel.swift */; };
+		4748B783235963CD007B3B73 /* AbhayaLibre-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4748B781235963CD007B3B73 /* AbhayaLibre-Regular.ttf */; };
+		4748B784235963CD007B3B73 /* AbhayaLibre-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4748B782235963CD007B3B73 /* AbhayaLibre-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4748B77423594154007B3B73 /* MyListAppGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListAppGradient.swift; sourceTree = "<group>"; };
 		4748B777235944F1007B3B73 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		4748B77A235955DE007B3B73 /* MyListAppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListAppLabel.swift; sourceTree = "<group>"; };
+		4748B781235963CD007B3B73 /* AbhayaLibre-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbhayaLibre-Regular.ttf"; sourceTree = "<group>"; };
+		4748B782235963CD007B3B73 /* AbhayaLibre-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbhayaLibre-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		4748B75C235934CA007B3B73 /* My List App */ = {
 			isa = PBXGroup;
 			children = (
+				4748B77C23595BC5007B3B73 /* fonts */,
 				4748B77923595560007B3B73 /* custom */,
 				4748B776235944D2007B3B73 /* extension */,
 				4748B75D235934CA007B3B73 /* AppDelegate.swift */,
@@ -90,6 +95,15 @@
 				4748B77A235955DE007B3B73 /* MyListAppLabel.swift */,
 			);
 			path = custom;
+			sourceTree = "<group>";
+		};
+		4748B77C23595BC5007B3B73 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4748B782235963CD007B3B73 /* AbhayaLibre-Bold.ttf */,
+				4748B781235963CD007B3B73 /* AbhayaLibre-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4748B76D235934CB007B3B73 /* LaunchScreen.storyboard in Resources */,
+				4748B783235963CD007B3B73 /* AbhayaLibre-Regular.ttf in Resources */,
+				4748B784235963CD007B3B73 /* AbhayaLibre-Bold.ttf in Resources */,
 				4748B76A235934CB007B3B73 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

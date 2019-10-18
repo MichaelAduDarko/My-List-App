@@ -23,7 +23,7 @@ class MyListAppLabel: UILabel {
         }
         self.text = title
         self.textColor = color
-        self.font = UIFont.systemFont(ofSize: size)
+        self.font = UIFont.init(name: "AbhayaLibre-Bold", size: size)
         self.textAlignment = textAlign
     }
 }
