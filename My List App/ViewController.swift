@@ -19,6 +19,13 @@ class ViewController: UIViewController {
     
     let titleLabel = MyListAppLabel(title: "LIST IT DOWN ", size: 30, textAlign: .center)
     
+    let infoLabel : UILabel = {
+     let label   = MyListAppLabel(title: "WELCOME. \n LIST IT DOWN IS A REALLY DOPE TO DO LIST APP", size: 14, textAlign: .center)
+      label.numberOfLines = 2
+        return label
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +44,13 @@ class ViewController: UIViewController {
         titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: bg.centerXAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: bg.topAnchor, constant:  60).isActive = true
+        
+        
+        bg.addSubview(infoLabel)
+           infoLabel.centerXAnchor.constraint(equalTo: bg.centerXAnchor).isActive = true
+           infoLabel.centerYAnchor.constraint(equalTo: bg.centerYAnchor).isActive = true
+        infoLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        infoLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
 }
