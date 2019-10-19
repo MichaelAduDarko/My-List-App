@@ -19,6 +19,7 @@
 		4748B783235963CD007B3B73 /* AbhayaLibre-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4748B781235963CD007B3B73 /* AbhayaLibre-Regular.ttf */; };
 		4748B784235963CD007B3B73 /* AbhayaLibre-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4748B782235963CD007B3B73 /* AbhayaLibre-Bold.ttf */; };
 		4748B78B235A8747007B3B73 /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B78A235A8747007B3B73 /* button.swift */; };
+		4748B78D235A93AB007B3B73 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B78C235A93AB007B3B73 /* ListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4748B781235963CD007B3B73 /* AbhayaLibre-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbhayaLibre-Regular.ttf"; sourceTree = "<group>"; };
 		4748B782235963CD007B3B73 /* AbhayaLibre-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbhayaLibre-Bold.ttf"; sourceTree = "<group>"; };
 		4748B78A235A8747007B3B73 /* button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
+		4748B78C235A93AB007B3B73 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				4748B76B235934CB007B3B73 /* LaunchScreen.storyboard */,
 				4748B76E235934CB007B3B73 /* Info.plist */,
 				4748B766235934CA007B3B73 /* My_List_App.xcdatamodeld */,
+				4748B78C235A93AB007B3B73 /* ListController.swift */,
 			);
 			path = "My List App";
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				4748B762235934CA007B3B73 /* ViewController.swift in Sources */,
 				4748B768235934CA007B3B73 /* My_List_App.xcdatamodeld in Sources */,
+				4748B78D235A93AB007B3B73 /* ListController.swift in Sources */,
 				4748B75E235934CA007B3B73 /* AppDelegate.swift in Sources */,
 				4748B78B235A8747007B3B73 /* button.swift in Sources */,
 				4748B778235944F1007B3B73 /* extension.swift in Sources */,
