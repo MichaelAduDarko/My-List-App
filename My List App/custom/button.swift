@@ -27,7 +27,7 @@ class button: UIButton {
         self.setTitleColor(.grayZero, for: .normal)
         self.layer.cornerRadius = 20
         self.backgroundColor = .white
-        if let titlelabel = self.titleLabel{
+        if self.titleLabel != nil{
             titleLabel?.font = UIFont.init(name: "AbhayaLibre-Bold", size: 16)
         }
       
