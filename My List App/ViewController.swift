@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     let titleLabel = MyListAppLabel(title: "LIST IT DOWN ", size: 30, textAlign: .center)
     
     let infoLabel : UILabel = {
-     let label   = MyListAppLabel(title: "WELCOME. \n LIST IT DOWN IS A REALLY DOPE TO DO LIST APP", size: 14, textAlign: .center)
+     let label   = MyListAppLabel(title: "WELCOME \n LIST IT DOWN IS A REALLY DOPE TO DO LIST APP", size: 14, textAlign: .center)
       label.numberOfLines = 2
         return label
     }()
