@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         return label
     }()
     
-    let nextButton = button(tittle: "START YOUR DAY")
+    let nextButton = button(tittle: "START YOUR DAY", type: .roundedText)
 
     let copyright = MyListAppLabel(title: "© 2019 | mike", color: .grayOne, size: 20,  textAlign: .center)
     

@@ -10,7 +10,7 @@ import UIKit
 
 class ListController: UIViewController {
     
-    let header = AppHeaderView()
+    let header = AppHeaderView(title: "Stuff to get done", subtitle: "4 left")
     
     override func viewDidLoad() {
         super.viewDidLoad()
