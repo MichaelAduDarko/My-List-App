@@ -9,9 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
- 
-    let listController = ListController()
-    
+   
     let bg:UIView = {
         let view = MyListAppGradient()
         view.layer.cornerRadius = 24
@@ -42,9 +40,12 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
             self.nextButton.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) {(_) in
-
-            self.listController.modalPresentationStyle = .fullScreen
-            self.present(self.listController, animated: true, completion: nil)
+          
+            
+            let listController = ListController()
+            
+            listController.modalPresentationStyle = .fullScreen
+            self.present(listController, animated: true, completion: nil)
       }
     }
 }

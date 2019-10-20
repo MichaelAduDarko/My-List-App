@@ -17,11 +17,11 @@ class button: UIButton {
             self.translatesAutoresizingMaskIntoConstraints = false
         }
         self.title = tittle
-         self.phaaseTwo()
+         self.buttonComponents()
     }
     
     
-    func phaaseTwo() {
+    func buttonComponents() {
        
         self.setTitle(self.title, for: .normal)
         self.setTitleColor(.grayZero, for: .normal)
