@@ -22,6 +22,9 @@
 		4748B78D235A93AB007B3B73 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B78C235A93AB007B3B73 /* ListController.swift */; };
 		4748B794235BCE5F007B3B73 /* AppHeaderVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B793235BCE5F007B3B73 /* AppHeaderVIew.swift */; };
 		4748B796235BE200007B3B73 /* optionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B795235BE200007B3B73 /* optionSet.swift */; };
+		4748B798235D4AD7007B3B73 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B797235D4AD7007B3B73 /* protocol.swift */; };
+		4748B79C235D4E21007B3B73 /* NewItemPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B79B235D4E21007B3B73 /* NewItemPopUp.swift */; };
+		4748B79E235D56EF007B3B73 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B79D235D56EF007B3B73 /* AppTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		4748B78C235A93AB007B3B73 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		4748B793235BCE5F007B3B73 /* AppHeaderVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderVIew.swift; sourceTree = "<group>"; };
 		4748B795235BE200007B3B73 /* optionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionSet.swift; sourceTree = "<group>"; };
+		4748B797235D4AD7007B3B73 /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
+		4748B79B235D4E21007B3B73 /* NewItemPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPopUp.swift; sourceTree = "<group>"; };
+		4748B79D235D56EF007B3B73 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 			children = (
 				4748B777235944F1007B3B73 /* extension.swift */,
 				4748B795235BE200007B3B73 /* optionSet.swift */,
+				4748B797235D4AD7007B3B73 /* protocol.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -104,6 +111,8 @@
 				4748B77A235955DE007B3B73 /* MyListAppLabel.swift */,
 				4748B78A235A8747007B3B73 /* button.swift */,
 				4748B793235BCE5F007B3B73 /* AppHeaderVIew.swift */,
+				4748B79B235D4E21007B3B73 /* NewItemPopUp.swift */,
+				4748B79D235D56EF007B3B73 /* AppTextField.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -199,14 +208,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4748B762235934CA007B3B73 /* ViewController.swift in Sources */,
+				4748B79C235D4E21007B3B73 /* NewItemPopUp.swift in Sources */,
 				4748B768235934CA007B3B73 /* My_List_App.xcdatamodeld in Sources */,
 				4748B794235BCE5F007B3B73 /* AppHeaderVIew.swift in Sources */,
 				4748B78D235A93AB007B3B73 /* ListController.swift in Sources */,
 				4748B75E235934CA007B3B73 /* AppDelegate.swift in Sources */,
 				4748B78B235A8747007B3B73 /* button.swift in Sources */,
 				4748B796235BE200007B3B73 /* optionSet.swift in Sources */,
+				4748B798235D4AD7007B3B73 /* protocol.swift in Sources */,
 				4748B778235944F1007B3B73 /* extension.swift in Sources */,
 				4748B77B235955DE007B3B73 /* MyListAppLabel.swift in Sources */,
+				4748B79E235D56EF007B3B73 /* AppTextField.swift in Sources */,
 				4748B77523594154007B3B73 /* MyListAppGradient.swift in Sources */,
 				4748B760235934CA007B3B73 /* SceneDelegate.swift in Sources */,
 			);

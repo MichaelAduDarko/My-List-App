@@ -8,9 +8,14 @@
 
 import UIKit
 
-class ListController: UIViewController {
+class ListController: UIViewController, headerDelegate {
+    func addItem() {
+        print("add item")
+    }
+    
     
     let header = AppHeaderView(title: "Stuff to get done", subtitle: "4 left")
+    let popUp = NewItemPopUp()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,15 @@ class ListController: UIViewController {
         header.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         header.heightAnchor.constraint(equalToConstant: 120).isActive = true
 
+        view.addSubview(popUp)
+        popUp.translatesAutoresizingMaskIntoConstraints = false
+        popUp.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        popUp.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        popUp.rightAnchor.constraint(equalTo: view.rightAnchor, constant:  -20).isActive = true
+        popUp.heightAnchor.constraint(equalToConstant: 80).isActive = true
+
+        
+        header.delegate = self
     }
 }
 

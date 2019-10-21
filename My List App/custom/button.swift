@@ -11,15 +11,18 @@ class button: UIButton {
     
     var title: String!
     var type : ButtonOptions!
+    var radius: CGFloat!
     
     
-    init(tittle: String = "button text", frame: CGRect = .zero, type:ButtonOptions = .roundedText) {
+    
+    init(tittle: String = "button text", frame: CGRect = .zero, type:ButtonOptions = .roundedText, radius: CGFloat = 20) {
         super.init(frame: frame)
         if frame == .zero{
             self.translatesAutoresizingMaskIntoConstraints = false
         }
          self.title = tittle
        self.type = type
+        self.radius = radius
        self.phaseTwo()
     }
     
@@ -54,7 +57,7 @@ class button: UIButton {
     
     
             func roundedText() {
-                self.layer.cornerRadius = 20
+                self.layer.cornerRadius = self.radius
               
             }
     
