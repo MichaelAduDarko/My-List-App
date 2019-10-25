@@ -17,10 +17,44 @@ class ListController: UIViewController, headerDelegate {
     let header = AppHeaderView(title: "Stuff to get done", subtitle: "4 left")
     let popUp = NewItemPopUp()
     
+    var keyboardHeight: CGFloat = 0
+
+    
+    //Retrieving keyboard
+    override func viewDidAppear(_ animated: Bool) {
+       
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+       
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as!
+        NSValue).cgRectValue.size
+        
+       self.keyboardHeight = keyboardSize.height
+        
+       
+        //animation to bring up text feild
+        UIView.animate(withDuration: 0.3, delay: 0.2, usingSpringWithDamping: 0.85, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+            self.popUp.transform = CGAffineTransform(translationX: 0, y: -self.keyboardHeight)
+        }, completion: nil  )
+        
+        
+    }
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+  
+    
         view.addSubview(header)
         header.translatesAutoresizingMaskIntoConstraints = false
         header.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
