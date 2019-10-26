@@ -40,7 +40,7 @@ class ListController: UIViewController, headerDelegate {
         
        
         //animation to bring up text feild
-        UIView.animate(withDuration: 0.3, delay: 0.2, usingSpringWithDamping: 0.85, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 0.85, initialSpringVelocity: 2, options: .curveEaseIn, animations: {
             self.popUp.transform = CGAffineTransform(translationX: 0, y: -self.keyboardHeight)
         }, completion: nil  )
         
