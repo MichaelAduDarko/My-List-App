@@ -60,7 +60,7 @@ class AppHeaderView: UIView {
     
     @objc func handleAddbutton(){
         if let delegate = self.delegate{
-            delegate.addItem()
+            delegate.openAddItemPopup()
         }
     }
     required init?(coder: NSCoder) {

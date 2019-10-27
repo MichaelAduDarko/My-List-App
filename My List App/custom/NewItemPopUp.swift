@@ -13,15 +13,19 @@ import UIKit
         let cancel = button(tittle: "  cancel  ",  type: .roundedText, radius: 4)
         let add = button(tittle: "  add  ", type: .roundedText, radius: 4)
         let textField = AppTextFiled(placeholder: "go buy Ikea frames", inset: 6)
+        var delegate: NewItemDelegate?
+        
         
         
         
        @objc func handleCancel(){
-        print("cancel")
+       textField.resignFirstResponder()
         }
         
         @objc func handleAdd(){
-            print("ADD")
+            if let delegate = self.delegate,  let textFieldText = self.textField.text {
+                delegate.addItemToList(text: textFieldText)
+            }
         }
         
         override init(frame: CGRect = .zero) {

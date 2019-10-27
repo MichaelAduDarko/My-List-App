@@ -9,5 +9,11 @@
 import Foundation
 
 protocol headerDelegate {
-    func addItem()
+    func openAddItemPopup()
+}
+
+protocol NewItemDelegate{
+    
+    func addItemToList(text:String)
+    
 }
