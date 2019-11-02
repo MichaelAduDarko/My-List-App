@@ -26,7 +26,8 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                                 view.translatesAutoresizingMaskIntoConstraints = false
                                 return view
                             }()
-            let lisTable = tableView()
+      let lisTable = TableView()
+      let CELL_ID = "cell_id"
     
     
     
@@ -94,6 +95,10 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                    popUp.textField.delegate = self
                     popUp.delegate = self
                     header.delegate = self
+                
+                lisTable.delegate = self
+                lisTable.dataSource = self
+                lisTable.register(UITableViewCell.self, forCellReuseIdentifier: CELL_ID )
             }
             
             
@@ -111,3 +116,19 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                     popUp.animateView( transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
                 }
             }
+
+        
+        extension ListController: UITableViewDelegate, UITableViewDataSource{
+            func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return 3
+            }
+            
+            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
+                cell.textLabel?.text = "Hi there"
+                return cell
+                
+            }
+            
+            
+        }

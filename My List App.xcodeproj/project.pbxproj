@@ -25,7 +25,7 @@
 		4748B798235D4AD7007B3B73 /* protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B797235D4AD7007B3B73 /* protocol.swift */; };
 		4748B79C235D4E21007B3B73 /* NewItemPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B79B235D4E21007B3B73 /* NewItemPopUp.swift */; };
 		4748B79E235D56EF007B3B73 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B79D235D56EF007B3B73 /* AppTextField.swift */; };
-		47E209B0236CFF0F005E2919 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E209AF236CFF0F005E2919 /* tableView.swift */; };
+		47E209B0236CFF0F005E2919 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E209AF236CFF0F005E2919 /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		4748B797235D4AD7007B3B73 /* protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocol.swift; sourceTree = "<group>"; };
 		4748B79B235D4E21007B3B73 /* NewItemPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemPopUp.swift; sourceTree = "<group>"; };
 		4748B79D235D56EF007B3B73 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
-		47E209AF236CFF0F005E2919 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
+		47E209AF236CFF0F005E2919 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 				4748B793235BCE5F007B3B73 /* AppHeaderVIew.swift */,
 				4748B79B235D4E21007B3B73 /* NewItemPopUp.swift */,
 				4748B79D235D56EF007B3B73 /* AppTextField.swift */,
-				47E209AF236CFF0F005E2919 /* tableView.swift */,
+				47E209AF236CFF0F005E2919 /* TableView.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 				4748B768235934CA007B3B73 /* My_List_App.xcdatamodeld in Sources */,
 				4748B794235BCE5F007B3B73 /* AppHeaderVIew.swift in Sources */,
 				4748B78D235A93AB007B3B73 /* ListController.swift in Sources */,
-				47E209B0236CFF0F005E2919 /* tableView.swift in Sources */,
+				47E209B0236CFF0F005E2919 /* TableView.swift in Sources */,
 				4748B75E235934CA007B3B73 /* AppDelegate.swift in Sources */,
 				4748B78B235A8747007B3B73 /* button.swift in Sources */,
 				4748B796235BE200007B3B73 /* optionSet.swift in Sources */,
