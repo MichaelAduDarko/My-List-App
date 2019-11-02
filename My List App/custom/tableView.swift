@@ -12,6 +12,8 @@ class TableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         checkIfAutoLayOut()
+        backgroundColor = .clear
+        separatorStyle = .none
        
         
     }

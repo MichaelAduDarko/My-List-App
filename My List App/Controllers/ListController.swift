@@ -30,6 +30,8 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
       let CELL_ID = "cell_id"
     
     
+    var listData = ["First Item","second Item", "Third Item"]
+    
     
                 var keyboardHeight: CGFloat = 345
 
@@ -98,7 +100,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 
                 lisTable.delegate = self
                 lisTable.dataSource = self
-                lisTable.register(UITableViewCell.self, forCellReuseIdentifier: CELL_ID )
+                lisTable.register(TableListCell.self, forCellReuseIdentifier: CELL_ID )
             }
             
             
@@ -120,12 +122,13 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
         
         extension ListController: UITableViewDelegate, UITableViewDataSource{
             func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return 3
+                return self.listData.count
             }
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)
-                cell.textLabel?.text = "Hi there"
+                let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
+                cell.textLabel?.text = self.listData[indexPath.row]
+           
                 return cell
                 
             }
