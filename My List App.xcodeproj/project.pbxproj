@@ -27,6 +27,7 @@
 		4748B79E235D56EF007B3B73 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4748B79D235D56EF007B3B73 /* AppTextField.swift */; };
 		47E209B0236CFF0F005E2919 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E209AF236CFF0F005E2919 /* TableView.swift */; };
 		47E209B2236D0E1D005E2919 /* TableListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E209B1236D0E1D005E2919 /* TableListCell.swift */; };
+		47E209B7236D10A6005E2919 /* toDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E209B6236D10A6005E2919 /* toDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		4748B79D235D56EF007B3B73 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		47E209AF236CFF0F005E2919 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		47E209B1236D0E1D005E2919 /* TableListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListCell.swift; sourceTree = "<group>"; };
+		47E209B6236D10A6005E2919 /* toDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		4748B75C235934CA007B3B73 /* My List App */ = {
 			isa = PBXGroup;
 			children = (
+				47E209B3236D102F005E2919 /* model */,
 				4748B77C23595BC5007B3B73 /* fonts */,
 				4748B776235944D2007B3B73 /* extension */,
 				4748B77923595560007B3B73 /* custom */,
@@ -139,6 +142,14 @@
 				4748B78C235A93AB007B3B73 /* ListController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		47E209B3236D102F005E2919 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				47E209B6236D10A6005E2919 /* toDo.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +232,7 @@
 				4748B78D235A93AB007B3B73 /* ListController.swift in Sources */,
 				47E209B0236CFF0F005E2919 /* TableView.swift in Sources */,
 				4748B75E235934CA007B3B73 /* AppDelegate.swift in Sources */,
+				47E209B7236D10A6005E2919 /* toDo.swift in Sources */,
 				4748B78B235A8747007B3B73 /* button.swift in Sources */,
 				4748B796235BE200007B3B73 /* optionSet.swift in Sources */,
 				4748B798235D4AD7007B3B73 /* protocol.swift in Sources */,

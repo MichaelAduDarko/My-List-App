@@ -30,7 +30,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
       let CELL_ID = "cell_id"
     
     
-    var listData = ["First Item","second Item", "Third Item"]
+    var listData : [ToDo] = [ToDo]()
     
     
                 var keyboardHeight: CGFloat = 345
@@ -61,6 +61,13 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 
             override func viewDidLoad() {
                 super.viewDidLoad()
+                
+                
+                listData=[
+                      ToDo(id: 0, title: "first item", status: false),
+                      ToDo(id: 1, title: "second item", status: false),
+                      ToDo(id: 2, title: "third item", status: false)
+                ]
                 
                 view.backgroundColor = .white
                 
@@ -127,7 +134,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
-                cell.textLabel?.text = self.listData[indexPath.row]
+                cell.textLabel?.text = self.listData[indexPath.row].title
            
                 return cell
                 
