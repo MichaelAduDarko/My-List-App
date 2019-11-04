@@ -136,13 +136,12 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
 //                cell.textLabel?.text = self.listData[indexPath.row].title
                 cell.toDo = self.listData[indexPath.row]
-           
                 return cell
                 
             }
             
             func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-                return 40
+                return 44
             }
             
             
