@@ -25,7 +25,7 @@ class TableListCell: UITableViewCell {
     var toDo: ToDo?{
         didSet{
             if let toDo = toDo{
-                print(toDo.status)
+                box.toggled = toDo.status
                 self.textField.text = toDo.title
             }
            
