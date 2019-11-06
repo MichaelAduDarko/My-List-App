@@ -19,6 +19,9 @@ class TableListCell: UITableViewCell {
         return view
     }()
     
+    let box = CheckBox()
+    
+    
     var toDo: ToDo?{
         didSet{
             if let toDo = toDo{
@@ -50,6 +53,12 @@ class TableListCell: UITableViewCell {
         textField.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
         textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -6).isActive = true
         textField.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        
+        addSubview(box)
+        box.rightAnchor.constraint(equalTo: rightAnchor, constant: -14).isActive = true
+        box.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        box.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        box.heightAnchor.constraint(equalTo: box.widthAnchor).isActive = true
        
     }
     

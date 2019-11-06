@@ -22,7 +22,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
     
                             let bg:UIView = {
                                 let view = MyListAppGradient()
-                                view.layer.cornerRadius = 24
+                                view.layer.cornerRadius = 16
                                 view.translatesAutoresizingMaskIntoConstraints = false
                                 return view
                             }()
@@ -86,10 +86,10 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
                 
                 view.addSubview(lisTable)
-                lisTable.leftAnchor.constraint(equalTo: bg.leftAnchor, constant: 8).isActive = true
-                lisTable.topAnchor.constraint(equalTo: bg.topAnchor, constant: 8).isActive = true
-                lisTable.bottomAnchor.constraint(equalTo: bg.bottomAnchor, constant: -8).isActive = true
-                lisTable.rightAnchor.constraint(equalTo: bg.rightAnchor, constant: -8).isActive = true
+                lisTable.leftAnchor.constraint(equalTo: bg.leftAnchor, constant: 16).isActive = true
+                lisTable.topAnchor.constraint(equalTo: bg.topAnchor, constant: 16).isActive = true
+                lisTable.bottomAnchor.constraint(equalTo: bg.bottomAnchor, constant: -16).isActive = true
+                lisTable.rightAnchor.constraint(equalTo: bg.rightAnchor, constant: -16).isActive = true
                 
                 
 
@@ -141,7 +141,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             }
             
             func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-                return 44
+                return 42
             }
             
             

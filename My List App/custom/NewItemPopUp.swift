@@ -34,7 +34,7 @@ import UIKit
             let insert:CGFloat = 12
             
             
-            self.layer.cornerRadius = 14
+            self.layer.cornerRadius = 16
             
             
             addSubview(cancel)
