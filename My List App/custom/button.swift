@@ -27,11 +27,11 @@ class button: UIButton {
     }
     
     func phaseTwo(){
-        self.setTitleColor(.grayZero, for: .normal)
+//        self.setTitleColor(.grayZero, for: .normal)
         self.backgroundColor = .white
-        self.setTitle(self.title, for: .normal)
-        if self.titleLabel != nil{
-            titleLabel?.font = UIFont.init(name: "AbhayaLibre-Bold", size: 16)
+//        self.setTitle(self.title, for: .normal)
+        if self.titleLabel != self.titleLabel{
+            titleLabel?.font = UIFont(name: "AbhayaLibre-Bold", size: 16)
         }
         
         switch type {
@@ -47,18 +47,15 @@ class button: UIButton {
     
     func squareIcon(){
         //this is where we will set our custom icons
-        if self.titleLabel != nil{
-            titleLabel?.font = UIFont.init(name: "AbhayaLibre-Bold", size: 24)
-        }
+      self.setImage(UIImage(named: "add-icon"), for: .normal)
         
     }
     
    
-    
-    
             func roundedText() {
+                self.setTitleColor(.grayZero, for: .normal)
+                self.setTitle(self.title, for: .normal)
                 self.layer.cornerRadius = self.radius
-              
             }
     
     required init?(coder: NSCoder) {

@@ -13,7 +13,7 @@ class AppHeaderView: UIView {
     let bg =  MyListAppGradient()
     let myTitleLabel = MyListAppLabel(size: 18)
     let subTitleLabel = MyListAppLabel( size: 24)
-    let addButton = button(tittle: "+",  type: .squareIcon)
+    let addButton = button(  type: .squareIcon)
     var delegate: headerDelegate?
     
     
