@@ -66,7 +66,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 listData=[
                       ToDo(id: 0, title: "first item", status: false),
                       ToDo(id: 1, title: "second item", status: true),
-                      ToDo(id: 2, title: "third item", status: false)
+                      ToDo(id: 2, title: "third item", status: true)
                 ]
                 
                 view.backgroundColor = .white
@@ -178,7 +178,19 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
 
-                cell.toDo = self.listData[indexPath.row]
+              
+                var  itemsForSection:[ToDo] = []
+                
+                self.listData.forEach { (toDo) in
+                    
+                    if indexPath.section == 0 && !toDo.status{
+                       itemsForSection.append(toDo)
+                    }else if (indexPath.section == 1 && toDo.status){
+                        itemsForSection.append(toDo)
+                    }
+                }
+                
+                  cell.toDo = itemsForSection[indexPath.row]
                 return cell
                 
             }
