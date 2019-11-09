@@ -11,7 +11,7 @@ import UIKit
 class CheckBox: UIButton {
     
     var delegate: ListCellDelegate?
-    
+    var id : Int?
     var toggled: Bool?{
         didSet{
             if let toggled = toggled {
@@ -30,9 +30,9 @@ class CheckBox: UIButton {
     }
     
     @objc func toggleStatus(){
-        if let status = toggled, let delegate = self.delegate{
+        if let status = toggled, let delegate = self.delegate, let id = self.id{
             toggled = !status
-            delegate.toggleToDo(status: !status)
+            delegate.toggleToDo(id: id, status: !status)
         }
     }
     

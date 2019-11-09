@@ -20,7 +20,7 @@ protocol NewItemDelegate{
 
 
 protocol ListCellDelegate {
-    func toggleToDo(status:Bool)  
+    func toggleToDo(id:Int, status:Bool)
     
     
 }

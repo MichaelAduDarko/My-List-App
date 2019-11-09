@@ -129,8 +129,20 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
         
         extension ListController: UITableViewDelegate, UITableViewDataSource, ListCellDelegate{
             
-            func toggleToDo(status: Bool) {
-                print("trying to toggle")
+            func toggleToDo(id:Int, status: Bool) {
+                
+                let newListData = self.listData.map { (toDo) -> ToDo in
+                    if toDo.id == id  {
+                        var newToDo = toDo
+                        newToDo.status = status
+                        
+                        return newToDo
+                    }
+                    return toDo
+                }
+                
+                self.listData = newListData
+                self.lisTable.reloadData()
             }
             
             
