@@ -138,6 +138,8 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                     return "Not Completed"
                 }
                 return "Completed"
+                
+                
             }
             
             func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -158,7 +160,19 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             
             
             func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return self.listData.count
+               
+                
+                var count = 0
+                self.listData.forEach { (toDo) in
+                    if section == 0 && !toDo.status{
+                        count += 1
+                    }else if (section == 1 && toDo.status){
+                        count += 1
+                    }
+                    
+                }
+                return count
+                
             }
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
