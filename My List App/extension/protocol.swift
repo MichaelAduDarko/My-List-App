@@ -17,3 +17,10 @@ protocol NewItemDelegate{
     func addItemToList(text:String)
     
 }
+
+
+protocol ListCellDelegate {
+    func toggleToDo(status:Bool)  
+    
+    
+}

@@ -127,7 +127,12 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             }
 
         
-        extension ListController: UITableViewDelegate, UITableViewDataSource{
+        extension ListController: UITableViewDelegate, UITableViewDataSource, ListCellDelegate{
+            
+            func toggleToDo(status: Bool) {
+                print("trying to toggle")
+            }
+            
             
             func numberOfSections(in tableView: UITableView) -> Int {
                 return 2
@@ -163,6 +168,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                
                 
                 var count = 0
+                
                 self.listData.forEach { (toDo) in
                     if section == 0 && !toDo.status{
                         count += 1
@@ -178,7 +184,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
 
-              
+              cell.box.delegate = self
                 var  itemsForSection:[ToDo] = []
                 
                 self.listData.forEach { (toDo) in
