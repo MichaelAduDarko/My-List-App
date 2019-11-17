@@ -10,6 +10,19 @@ import UIKit
 
 class TableListCell: UITableViewCell {
     
+    var delegate: ListCellDelegate?
+    @objc func toggleStatus(){
+        
+        if let delegate = self.delegate, let toDo = self.toDo{
+            let newToDo = ToDo(id: toDo.id, title: textField.text!, status: !toDo.status)
+            delegate.toggleToDo(toDo: newToDo)
+            
+        }
+
+    }
+    
+  
+    
 //    let titleLabel = MyListAppLabel(color: .grayZero, size: 14)
     let textField = AppTextFiled(placeholder: "ToDo", radius: 0, inset: 14)
     let view:UIView = {
@@ -36,6 +49,9 @@ class TableListCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+          box.addTarget(self, action: #selector(self.toggleStatus), for: .touchUpInside)
+        
         selectionStyle = .none
        backgroundColor = .clear
         

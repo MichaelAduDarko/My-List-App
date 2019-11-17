@@ -109,7 +109,11 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 lisTable.dataSource = self
                 lisTable.register(TableListCell.self, forCellReuseIdentifier: CELL_ID )
             }
-            
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
             
         }
 
@@ -129,16 +133,17 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
         
         extension ListController: UITableViewDelegate, UITableViewDataSource, ListCellDelegate{
             
-            func toggleToDo(id:Int, status: Bool) {
+            func toggleToDo(toDo updatedTodo: ToDo) {
                 
-                let newListData = self.listData.map { (toDo) -> ToDo in
-                    if toDo.id == id  {
-                        var newToDo = toDo
-                        newToDo.status = status
-                        
+                let newListData = self.listData.map { (oldToDo) -> ToDo in
+                    if oldToDo.id == updatedTodo.id  {
+                        var newToDo = oldToDo
+                        newToDo.status = updatedTodo.status
+                        newToDo.title = updatedTodo.title
                         return newToDo
                     }
-                    return toDo
+                    
+                    return oldToDo
                 }
                 
                 self.listData = newListData
@@ -196,7 +201,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
 
-              cell.box.delegate = self
+              cell.delegate = self
                 var  itemsForSection:[ToDo] = []
                 
                 self.listData.forEach { (toDo) in
