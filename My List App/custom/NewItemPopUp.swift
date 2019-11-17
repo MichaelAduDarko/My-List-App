@@ -35,6 +35,8 @@ import UIKit
             
             
             self.layer.cornerRadius = 16
+//            self.layer.masksToBounds = true
+            self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             
             
             addSubview(cancel)
