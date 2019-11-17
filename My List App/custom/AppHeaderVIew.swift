@@ -28,6 +28,15 @@ class AppHeaderView: UIView {
       
 }
     
+    var itemsLeft : Int = 0{
+        didSet{
+            self.subTitleLabel.text = "\(itemsLeft) Left"
+        }
+    }
+    
+    
+    
+    
     func setupLayout(){
         addSubview(bg)
          bg.leftAnchor.constraint(equalTo: leftAnchor).isActive = true

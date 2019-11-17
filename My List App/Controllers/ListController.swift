@@ -54,8 +54,15 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                         
                        self.keyboardHeight = keyboardSize.height
                         
-                        
                     }
+    
+    
+    func updateItemsLeft(){
+        header.itemsLeft = 0
+        self.listData.forEach { (toDo) in
+            if !toDo.status{ header.itemsLeft += 1}
+        }
+    }
 
                 
                 
@@ -69,6 +76,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                       ToDo(id: 2, title: "third item", status: true)
                 ]
                 
+                self.updateItemsLeft()
                 view.backgroundColor = .white
                 
            
@@ -148,6 +156,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 
                 self.listData = newListData
                 self.lisTable.reloadData()
+                self.updateItemsLeft()
             }
             
             
