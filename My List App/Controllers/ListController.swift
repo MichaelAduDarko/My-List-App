@@ -9,9 +9,18 @@
             import UIKit
 
 class ListController: UIViewController, headerDelegate, NewItemDelegate {
-               func openAddItemPopup() {
-                            print("add item open")
-                        }
+    
+    var popUpLocation: CGFloat = 70
+    
+       func openAddItemPopup() {
+        popUp.animateView(transform: CGAffineTransform(translationX: 0, y: popUpLocation), duration: 0.3)
+        
+        if popUpLocation == 70 {
+             popUpLocation = 0
+        } else{
+            popUpLocation = 70
+        }
+    }
     
                         func addItemToList(text:String) {
                             print("Text in textfield is : \(text)")
@@ -107,7 +116,9 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                     popUp.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
                     popUp.rightAnchor.constraint(equalTo: view.rightAnchor, constant:  -20).isActive = true
                     popUp.heightAnchor.constraint(equalToConstant: 80).isActive = true
-
+                
+                
+                    openAddItemPopup()
                 
                    popUp.textField.delegate = self
                     popUp.delegate = self
