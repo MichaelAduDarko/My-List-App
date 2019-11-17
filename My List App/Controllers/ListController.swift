@@ -82,7 +82,8 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 listData=[
                       ToDo(id: 0, title: "first item", status: false),
                       ToDo(id: 1, title: "second item", status: true),
-                      ToDo(id: 2, title: "third item", status: true)
+                      ToDo(id: 2, title: "third item", status: true),
+                     ToDo(id: 3, title: "fourth item", status: true)
                 ]
                 
                 self.updateItemsLeft()
