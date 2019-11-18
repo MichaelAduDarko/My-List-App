@@ -73,8 +73,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
         }
     }
 
-                
-                
+     
             override func viewDidLoad() {
                 super.viewDidLoad()
                 
