@@ -13,13 +13,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
     var popUpLocation: CGFloat = 70
     
        func openAddItemPopup() {
-        popUp.animateView(transform: CGAffineTransform(translationX: 0, y: popUpLocation), duration: 0.3)
-        
-        if popUpLocation == 70 {
-             popUpLocation = 0
-        } else{
-            popUpLocation = 70
-        }
+        popUp.animatePopUp()
     }
     
                         func addItemToList(text:String) {

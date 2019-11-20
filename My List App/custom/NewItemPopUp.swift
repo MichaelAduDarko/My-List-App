@@ -20,6 +20,19 @@ import UIKit
         
        @objc func handleCancel(){
        textField.resignFirstResponder()
+        animatePopUp()
+        }
+        
+        var popUpLocation: CGFloat = 70
+        
+        @objc func animatePopUp() {
+            self.animateView(transform: CGAffineTransform(translationX: 0, y: popUpLocation), duration: 0.3)
+            
+            if popUpLocation == 70 {
+                popUpLocation = 0
+            } else{
+                popUpLocation = 70
+            }
         }
         
         @objc func handleAdd(){
@@ -30,6 +43,8 @@ import UIKit
         
         override init(frame: CGRect = .zero) {
             super.init(frame: frame)
+            
+            self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.animatePopUp)))
             
             let insert:CGFloat = 12
             
