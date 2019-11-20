@@ -16,8 +16,26 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
         popUp.animatePopUp()
     }
     
+    
+    func notInList(text: String) -> Bool {
+        var isNotInList = true
+        self.listData.forEach { (toDo) in
+            if toDo.title == text{
+                isNotInList = false
+            }
+        }
+        return isNotInList
+    }
                         func addItemToList(text:String) {
-                            print("Text in textfield is : \(text)")
+                            if (notInList(text: text)) {
+                                let newItem = ToDo(id: self.listData.count, title: text, status: false)
+                                self.listData.append(newItem)
+                                self.lisTable.reloadData()
+                                self.updateItemsLeft()
+                                self.popUp.textField.text = ""
+                                self.popUp.animatePopUp()
+                            }
+                           
                         }
     
                             let header = AppHeaderView(title: "Stuff to get done", subtitle: "4 left")

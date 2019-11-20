@@ -19,13 +19,14 @@ import UIKit
         
         
        @objc func handleCancel(){
-       textField.resignFirstResponder()
+       
         animatePopUp()
         }
         
         var popUpLocation: CGFloat = 70
         
         @objc func animatePopUp() {
+            textField.resignFirstResponder()
             self.animateView(transform: CGAffineTransform(translationX: 0, y: popUpLocation), duration: 0.3)
             
             if popUpLocation == 70 {
