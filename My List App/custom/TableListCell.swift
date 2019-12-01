@@ -18,12 +18,12 @@ class TableListCell: UITableViewCell {
             delegate.toggleToDo(toDo: newToDo)
             
         }
-
+        
     }
     
-  
     
-//    let titleLabel = MyListAppLabel(color: .grayZero, size: 14)
+    
+    //    let titleLabel = MyListAppLabel(color: .grayZero, size: 14)
     let textField = AppTextFiled(placeholder: "ToDo", radius: 0, inset: 14)
     let view:UIView = {
         let view = UIView()
@@ -42,7 +42,7 @@ class TableListCell: UITableViewCell {
                 box.id = toDo.id
                 self.textField.text = toDo.title
             }
-           
+            
         }
     }
     
@@ -50,12 +50,12 @@ class TableListCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-          box.addTarget(self, action: #selector(self.toggleStatus), for: .touchUpInside)
+        box.addTarget(self, action: #selector(self.toggleStatus), for: .touchUpInside)
         
         selectionStyle = .none
-       backgroundColor = .clear
+        backgroundColor = .clear
         
-         view.backgroundColor = .white
+        view.backgroundColor = .white
         
         addSubview(view)
         view.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -63,7 +63,7 @@ class TableListCell: UITableViewCell {
         view.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
         view.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         
-       
+        
         
         view.addSubview(textField)
         textField.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
@@ -76,7 +76,7 @@ class TableListCell: UITableViewCell {
         box.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         box.widthAnchor.constraint(equalToConstant: 22).isActive = true
         box.heightAnchor.constraint(equalTo: box.widthAnchor).isActive = true
-       
+        
     }
     
     required init?(coder: NSCoder) {

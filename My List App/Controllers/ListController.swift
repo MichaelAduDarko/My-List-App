@@ -5,113 +5,116 @@
         //  Created by MICHAEL ADU DARKO on 10/18/19.
         //  Copyright © 2019 Bronzy. All rights reserved.
         //
-
-            import UIKit
-
-class ListController: UIViewController, headerDelegate, NewItemDelegate {
-    
-    var popUpLocation: CGFloat = 70
-    
-       func openAddItemPopup() {
-        popUp.animatePopUp()
-    }
-    
-    
-    func notInList(text: String) -> Bool {
-        var isNotInList = true
-        self.listData.forEach { (toDo) in
-            if toDo.title == text{
-                isNotInList = false
+        
+        import UIKit
+        
+        class ListController: UIViewController, headerDelegate, NewItemDelegate {
+            
+            var popUpLocation: CGFloat = 70
+            
+            func openAddItemPopup() {
+                popUp.animatePopUp()
             }
-        }
-        return isNotInList
-    }
-                        func addItemToList(text:String) {
-                            if (notInList(text: text)) {
-                                let newItem = ToDo(id: self.listData.count, title: text, status: false)
-                                self.listData.append(newItem)
-                                self.lisTable.reloadData()
-                                self.updateItemsLeft()
-                                self.popUp.textField.text = ""
-                                self.popUp.animatePopUp()
-                            }
-                           
-                        }
-    
-                            let header = AppHeaderView(title: "Stuff to get done", subtitle: "4 left")
-                            let popUp = NewItemPopUp()
-    
-                            let bg:UIView = {
-                                let view = MyListAppGradient()
-                                view.layer.cornerRadius = 16
-                                view.translatesAutoresizingMaskIntoConstraints = false
-                                return view
-                            }()
-      let lisTable = TableView()
-      let CELL_ID = "cell_id"
-    
-    
-    var listData : [ToDo] = [ToDo]()
-    
-    
-                var keyboardHeight: CGFloat = 345
-
-                
-                //Retrieving keyboard
-                override func viewDidAppear(_ animated: Bool) {
-                   
-                    NotificationCenter.default.addObserver(
-                        self,
-                        selector: #selector(keyboardWillShow(notification:)),
-                        name: UIResponder.keyboardWillShowNotification,
-                        object: nil
-                    )
-                   
+            
+            
+            func notInList(text: String) -> Bool {
+                var isNotInList = true
+                self.listData.forEach { (toDo) in
+                    if toDo.title == text{
+                        isNotInList = false
+                    }
+                }
+                return isNotInList
+            }
+            func addItemToList(text:String) {
+                if (notInList(text: text)) {
+                    let newItem = ToDo(id: self.listData.count, title: text, status: false)
+                    self.listData.append(newItem)
+                    self.lisTable.reloadData()
+                    self.updateItemsLeft()
+                    self.popUp.textField.text = ""
+                    self.popUp.animatePopUp()
                 }
                 
-                    @objc func keyboardWillShow(notification: Notification) {
-                        let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as!
-                        NSValue).cgRectValue.size
-                        
-                       self.keyboardHeight = keyboardSize.height
-                        
-                    }
-    
-    
-    func updateItemsLeft(){
-        header.itemsLeft = 0
-        self.listData.forEach { (toDo) in
-            if !toDo.status{ header.itemsLeft += 1}
-        }
-    }
-
-     
+            }
+            
+            let header = AppHeaderView(title: "Stuff to get done", subtitle: "4 left")
+            let popUp = NewItemPopUp()
+            
+            var bgBottom: NSLayoutConstraint!
+            
+            let bg:UIView = {
+                let view = MyListAppGradient()
+                view.layer.cornerRadius = 16
+                view.translatesAutoresizingMaskIntoConstraints = false
+                return view
+            }()
+            let lisTable = TableView()
+            let CELL_ID = "cell_id"
+            
+            
+            var listData : [ToDo] = [ToDo]()
+            
+            
+            var keyboardHeight: CGFloat = 345
+            
+            
+            //Retrieving keyboard
+            override func viewDidAppear(_ animated: Bool) {
+                
+                NotificationCenter.default.addObserver(
+                    self,
+                    selector: #selector(keyboardWillShow(notification:)),
+                    name: UIResponder.keyboardWillShowNotification,
+                    object: nil
+                )
+                
+            }
+            
+            @objc func keyboardWillShow(notification: Notification) {
+                let keyboardSize = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as!
+                    NSValue).cgRectValue.size
+                
+                self.keyboardHeight = keyboardSize.height
+                
+            }
+            
+            
+            func updateItemsLeft(){
+                header.itemsLeft = 0
+                self.listData.forEach { (toDo) in
+                    if !toDo.status{ header.itemsLeft += 1}
+                }
+            }
+            
+            
             override func viewDidLoad() {
                 super.viewDidLoad()
                 
                 
                 listData=[
-                      ToDo(id: 0, title: "first item", status: false),
-                      ToDo(id: 1, title: "second item", status: true),
-                      ToDo(id: 2, title: "third item", status: true),
-                   
+                    ToDo(id: 0, title: "first item", status: false),
+                    ToDo(id: 1, title: "second item", status: true),
+                    ToDo(id: 2, title: "third item", status: true),
+                    
                 ]
                 
                 self.updateItemsLeft()
                 view.backgroundColor = .white
                 
-           
-                    view.addSubview(header)
-                    header.translatesAutoresizingMaskIntoConstraints = false
-                    header.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-                    header.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-                    header.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-                    header.heightAnchor.constraint(equalToConstant: 120).isActive = true
+                
+                view.addSubview(header)
+                header.translatesAutoresizingMaskIntoConstraints = false
+                header.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+                header.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+                header.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+                header.heightAnchor.constraint(equalToConstant: 120).isActive = true
                 
                 view.addSubview(bg)
                 bg.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
                 bg.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 20).isActive = true
-                bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+                bgBottom = bg.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+                bgBottom.isActive = true
                 bg.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
                 
                 view.addSubview(lisTable)
@@ -121,46 +124,54 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 lisTable.rightAnchor.constraint(equalTo: bg.rightAnchor, constant: -16).isActive = true
                 
                 
-
-                    view.addSubview(popUp)
-                    popUp.translatesAutoresizingMaskIntoConstraints = false
-                    popUp.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-                    popUp.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-                    popUp.rightAnchor.constraint(equalTo: view.rightAnchor, constant:  -20).isActive = true
-                    popUp.heightAnchor.constraint(equalToConstant: 80).isActive = true
+                
+                view.addSubview(popUp)
+                popUp.translatesAutoresizingMaskIntoConstraints = false
+                popUp.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+                popUp.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+                popUp.rightAnchor.constraint(equalTo: view.rightAnchor, constant:  -20).isActive = true
+                popUp.heightAnchor.constraint(equalToConstant: 80).isActive = true
                 
                 
-                    openAddItemPopup()
+                openAddItemPopup()
                 
-                   popUp.textField.delegate = self
-                    popUp.delegate = self
-                    header.delegate = self
+                popUp.textField.delegate = self
+                popUp.delegate = self
+                header.delegate = self
                 
                 lisTable.delegate = self
                 lisTable.dataSource = self
                 lisTable.register(TableListCell.self, forCellReuseIdentifier: CELL_ID )
             }
-    
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+            
+            
+            override var preferredStatusBarStyle: UIStatusBarStyle{
+                return .lightContent
+            }
             
         }
-
-
-            extension ListController: UITextFieldDelegate{
-                
-               
-                func textFieldDidBeginEditing(_ textField: UITextField) {
-                    popUp.animateView( transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
+        
+        
+        extension ListController: UITextFieldDelegate{
+            
+            
+            func textFieldDidBeginEditing(_ textField: UITextField) {
+                self.bgBottom.constant = -keyboardHeight - 100
+                UIView.animate(withDuration: 0.3) {
+                    self.view.layoutIfNeeded()
                 }
-                
-                func textFieldDidEndEditing(_ textField: UITextField) {
-                    popUp.animateView( transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
-                }
+                popUp.animateView( transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
             }
-
+            
+            func textFieldDidEndEditing(_ textField: UITextField) {
+                self.bgBottom.constant = -100
+                UIView.animate(withDuration: 0.3) {
+               self.view.layoutIfNeeded()
+            }
+                popUp.animateView( transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+            }
+        }
+        
         
         extension ListController: UITableViewDelegate, UITableViewDataSource, ListCellDelegate{
             
@@ -214,7 +225,7 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             
             
             func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-               
+                
                 
                 var count = 0
                 
@@ -232,20 +243,21 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath)as! TableListCell
-
-              cell.delegate = self
+                
+                cell.delegate = self
+                cell.textField.delegate = self
                 var  itemsForSection:[ToDo] = []
                 
                 self.listData.forEach { (toDo) in
                     
                     if indexPath.section == 0 && !toDo.status{
-                       itemsForSection.append(toDo)
+                        itemsForSection.append(toDo)
                     }else if (indexPath.section == 1 && toDo.status){
                         itemsForSection.append(toDo)
                     }
                 }
                 
-                  cell.toDo = itemsForSection[indexPath.row]
+                cell.toDo = itemsForSection[indexPath.row]
                 return cell
                 
             }
@@ -254,5 +266,5 @@ class ListController: UIViewController, headerDelegate, NewItemDelegate {
                 return 42
             }
             
-           
+            
         }

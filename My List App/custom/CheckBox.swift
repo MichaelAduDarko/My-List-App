@@ -17,7 +17,7 @@ class CheckBox: UIButton {
                 UIView.animate(withDuration: 0.2){
                     if toggled {
                         self.backgroundColor = .green
-                       self.setImage(UIImage(named: "done-icon"), for: .normal)
+                        self.setImage(UIImage(named: "done-icon"), for: .normal)
                     } else{
                         self.backgroundColor = .clear
                         self.setImage(UIImage(), for: .normal)
@@ -28,7 +28,7 @@ class CheckBox: UIButton {
         }
     }
     
-  
+    
     override init(frame: CGRect){
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -36,7 +36,7 @@ class CheckBox: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.grayZero.cgColor
         
-       
+        
     }
     
     required init?(coder: NSCoder) {

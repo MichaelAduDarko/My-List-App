@@ -32,7 +32,7 @@ class AppTextFiled: UITextField {
     }
     
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
-         return bounds.inset(by: self.insets)
+        return bounds.inset(by: self.insets)
     }
     
     required init?(coder: NSCoder) {
