@@ -92,12 +92,9 @@
                 super.viewDidLoad()
                 
                 
-                listData=[
-                    ToDo(id: 0, title: "first item", status: false),
-                    ToDo(id: 1, title: "second item", status: true),
-                    ToDo(id: 2, title: "third item", status: true),
-                    
-                ]
+                listData=[]
+                
+                
                 
                 self.updateItemsLeft()
                 view.backgroundColor = .white
@@ -153,22 +150,41 @@
         
         
         extension ListController: UITextFieldDelegate{
-            
+            func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+                textField.resignFirstResponder()
+                return true
+            }
             
             func textFieldDidBeginEditing(_ textField: UITextField) {
-                self.bgBottom.constant = -keyboardHeight - 100
+                var heightToAnimate = -keyboardHeight - 20
+                
+                
+                if textField == popUp.textField {
+                    popUp.animateView( transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
+                    
+                    heightToAnimate -= 80
+                }
+                
+                self.bgBottom.constant = heightToAnimate
                 UIView.animate(withDuration: 0.3) {
                     self.view.layoutIfNeeded()
                 }
-                popUp.animateView( transform: CGAffineTransform(translationX: 0, y: -keyboardHeight), duration: 0.5)
+                
             }
             
             func textFieldDidEndEditing(_ textField: UITextField) {
                 self.bgBottom.constant = -100
                 UIView.animate(withDuration: 0.3) {
-               self.view.layoutIfNeeded()
-            }
-                popUp.animateView( transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+                    self.view.layoutIfNeeded()
+                }
+                
+                if textField == popUp.textField{
+                    popUp.animateView( transform: CGAffineTransform(translationX: 0, y: 0), duration: 0.6)
+                    
+                } else{
+                    
+                }
+                
             }
         }
         
